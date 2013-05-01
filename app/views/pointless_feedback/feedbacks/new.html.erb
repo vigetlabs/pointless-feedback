@@ -1,0 +1,31 @@
+<%= form_for @feedback do |f| %>
+  <fieldset class="user-fields">
+    <legend>About You</legend>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email_address %>
+      <%= f.text_field :email_address %>
+    </div>
+  </fieldset>
+
+  <fieldset class="feedback-fields">
+    <legend>Leave Your Feedback</legend>
+
+    <div class="field">
+      <%= f.label :topic %>
+      <%= f.text_field :topic %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+  </fieldset>
+
+  <%= f.submit %>
+<% end %>
