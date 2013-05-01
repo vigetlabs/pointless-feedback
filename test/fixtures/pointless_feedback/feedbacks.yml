@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Dolan
+  email_address: dolan@goobypls.com
+  topic: Please Halp
+  description: Uncle Dolan has dun nuthin rong
+
+two:
+  name: Gooby
+  email_address: gooby@goobypls.com
+  topic: Bogs Stahp
+  description: Wut dose ur bode luk lik?
