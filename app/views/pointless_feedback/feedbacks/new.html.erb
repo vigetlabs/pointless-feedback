@@ -1,4 +1,22 @@
 <%= form_for @feedback do |f| %>
+  <% if @feedback.errors.any? %>
+    <div class="error_messages">
+      <h2>
+        <%= I18n.t('activerecord.errors.header', :default => 'Invalid Fields') %>
+      </h2>
+
+      <p>
+        <%= I18n.t('activerecord.errors.message', :default => 'Correct the following errors and try again.') %>
+      </p>
+
+      <ul>
+        <% @feedback.errors.full_messages.each do |message| %>
+          <li><%= message.html_safe %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <fieldset class="user-fields">
     <legend>About You</legend>
 
