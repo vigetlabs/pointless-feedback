@@ -55,8 +55,17 @@ cases. However, certain things are customizable to suit your app's needs.
 
 #### Views
 
-To override the feedback form, simply add
-`pointless_feedback/messages/new.html.erb` to your `app/views` directory.
+Since Pointless Feedback is an engine, all its views are packaged inside the
+gem. These views will help you get started, but after some time you may want
+to change them. If this is the case, you just need to invoke the following
+generator, and it will copy all views to your application:
+
+```
+bundle exec rails generate pointless_feedback:views
+```
+
+After doing so, you will find the views at `app/views/pointless_feedback/`
+within your application.
 
 #### I18n
 
