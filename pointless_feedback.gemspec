@@ -7,13 +7,13 @@ require "pointless_feedback/version"
 Gem::Specification.new do |s|
   s.name        = "pointless_feedback"
   s.version     = PointlessFeedback::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of PointlessFeedback."
-  s.description = "TODO: Description of PointlessFeedback."
+  s.authors     = ["Zachary Porter"]
+  s.email       = ["developers@viget.com"]
+  s.homepage    = "https://github.com/vigetlabs/pointless-feedback"
+  s.summary     = "Simple Rails Engine to allow users to submit feedback"
+  s.description = "Simple Rails Engine to allow users to submit feedback"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.13"
