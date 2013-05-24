@@ -1,19 +1,19 @@
 require 'test_helper'
 
 module PointlessFeedback
-  class FeedbacksControllerTest < ActionController::TestCase
+  class MessagesControllerTest < ActionController::TestCase
     describe "getting new" do
       setup { get :new, :use_route => :pointless_feedback }
 
       it { assert_response :success }
       it { assert_template :new }
-      it { assigns(:feedback).must_be_instance_of Feedback }
+      it { assigns(:message).must_be_instance_of Message }
     end
 
     describe "posting to create" do
       setup do
         @valid_params = {
-          :feedback => {
+          :message => {
             :name          => 'Some Guy',
             :email_address => 'some_guy@web.com',
             :topic         => 'Pls Halp',
@@ -25,13 +25,13 @@ module PointlessFeedback
 
       describe "with invalid params" do
         setup do
-          post :create, @valid_params.merge(:feedback => { :name => ''})
+          post :create, @valid_params.merge(:message => { :name => ''})
         end
 
         it { assert_response :success }
         it { assert_template :new }
 
-        it { assigns(:feedback).must_be :invalid? }
+        it { assigns(:message).must_be :invalid? }
       end
 
       describe "with valid params" do

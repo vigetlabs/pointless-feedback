@@ -1,5 +1,5 @@
 module PointlessFeedback
-  class Feedback < ActiveRecord::Base
+  class Message < ActiveRecord::Base
     attr_accessible :description, :email_address, :name, :topic
 
     validates :name, :email_address, :topic, :description, :presence => true

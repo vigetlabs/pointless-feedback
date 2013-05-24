@@ -1,8 +1,8 @@
 require 'test_helper'
 
 module PointlessFeedback
-  class FeedbackTest < ActiveSupport::TestCase
-    subject { PointlessFeedback::Feedback.new }
+  class MessageTest < ActiveSupport::TestCase
+    subject { PointlessFeedback::Message.new }
 
     %w(name email_address topic description).each do |field|
       it "requires #{field}" do

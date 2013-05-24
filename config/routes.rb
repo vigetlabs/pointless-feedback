@@ -1,5 +1,5 @@
 PointlessFeedback::Engine.routes.draw do
-  root :to => 'feedbacks#new'
+  root :to => 'messages#new'
 
-  resources :feedbacks, :only => [:new, :create]
+  resources :messages, :only => [:new, :create]
 end

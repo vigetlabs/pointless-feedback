@@ -1,6 +1,6 @@
-class CreatePointlessFeedbackFeedbacks < ActiveRecord::Migration
+class CreatePointlessFeedbackMessages < ActiveRecord::Migration
   def change
-    create_table :pointless_feedback_feedbacks do |t|
+    create_table :pointless_feedback_messages do |t|
       t.string :name
       t.string :email_address
       t.string :topic

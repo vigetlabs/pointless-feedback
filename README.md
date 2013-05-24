@@ -44,7 +44,7 @@ cases. However, certain things are customizable to suit your app's needs.
 #### Views
 
 To override the feedback form, simply add
-`pointless_feedback/feedbacks/new.html.erb` to your `app/views` directory.
+`pointless_feedback/messages/new.html.erb` to your `app/views` directory.
 
 #### I18n
 
@@ -56,7 +56,7 @@ following to your `config/locales/en.yml` file:
 
 ```yml
 pointless_feedback:
-  feedbacks:
+  messages:
     saved: "Thanks for your feedback!"
 ```
 

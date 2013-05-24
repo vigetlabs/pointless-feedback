@@ -1,5 +1,5 @@
-<%= form_for @feedback do |f| %>
-  <% if @feedback.errors.any? %>
+<%= form_for @message do |f| %>
+  <% if @message.errors.any? %>
     <div class="error_messages">
       <h2>
         <%= I18n.t('activerecord.errors.header', :default => 'Invalid Fields') %>
@@ -10,7 +10,7 @@
       </p>
 
       <ul>
-        <% @feedback.errors.full_messages.each do |message| %>
+        <% @message.errors.full_messages.each do |message| %>
           <li><%= message.html_safe %></li>
         <% end %>
       </ul>
