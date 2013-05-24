@@ -35,13 +35,26 @@ module PointlessFeedback
       end
 
       describe "with valid params" do
-        setup do
-          post :create, @valid_params
+        describe "with default after_message_create_path" do
+          setup do
+            post :create, @valid_params
+          end
+
+          it { assert_response :redirect }
+          it { assert_redirected_to '/' }
+          it { flash[:notice].must_equal 'Thanks for your feedback!' }
         end
 
-        it { assert_response :redirect }
-        it { assert_redirected_to '/' }
-        it { flash[:notice].must_equal 'Thanks for your feedback!' }
+        describe "with overridden after_message_create_path" do
+          setup do
+            @controller.instance_eval "def after_message_create_path; '/dashboard'; end"
+            post :create, @valid_params
+          end
+
+          it { assert_response :redirect }
+          it { assert_redirected_to '/dashboard' }
+          it { flash[:notice].must_equal 'Thanks for your feedback!' }
+        end
       end
     end
   end

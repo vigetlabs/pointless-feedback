@@ -81,6 +81,11 @@ activerecord:
     message: "Correct the following errors and try again."
 ```
 
+#### Controllers
+
+You can overwrite `after_message_create_path` in your `ApplicationController`
+to customize your redirect hook.
+
 ## Development
 
 1. Clone the repo: `git clone git://github.com/vigetlabs/pointless-feedback.git`
