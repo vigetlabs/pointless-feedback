@@ -33,6 +33,18 @@ Mount the routes in your `config/routes.rb` file.
 mount PointlessFeedback::Engine => '/feedback'
 ```
 
+Pointless Feedback uses flash messages to let users know if feedback was
+successfully sent. Pointless Feedback expects your application to call
+`flash[:notice]` as appropriate.
+
+After submitting feedback, Pointless Feedback will use your application's
+default `root_path`. This means that you need to set the root inside your
+routes:
+
+```ruby
+root :to => 'home#index'
+```
+
 That's it! Start your Rails server and navigate to `/feedback` to see a basic
 feedback form that users can submit.
 
