@@ -27,7 +27,16 @@ the following to your Gemfile:
 gem 'pointless_feedback', :git => 'git@github.com:vigetlabs/pointless-feedback.git'
 ```
 
-Mount the routes in your `config/routes.rb` file.
+After you install Pointless Feedback and add it to your Gemfile, you need to
+run the generator:
+
+```
+bundle exec rails generate pointless_feedback:install
+```
+
+The generator will install an initializer which describes ALL Pointless
+Feedback's configuration options and you MUST take a look at it. When you are
+done, you are ready to mount the routes in your `config/routes.rb` file.
 
 ```ruby
 mount PointlessFeedback::Engine => '/feedback'

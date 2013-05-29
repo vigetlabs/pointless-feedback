@@ -14,4 +14,11 @@ module PointlessFeedback
   # Custom topics to display on message form
   mattr_accessor :message_topics
   @@message_topics = ['Error on page', 'Other']
+
+  # Default way to setup PointlessFeedback. Run rails generate
+  # pointless_feedback_install to create a fresh initializer with all
+  # configuration values.
+  def self.setup
+    yield self
+  end
 end
