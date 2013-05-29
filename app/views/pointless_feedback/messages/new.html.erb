@@ -36,7 +36,7 @@
 
     <div class="field">
       <%= f.label :topic %>
-      <%= f.text_field :topic %>
+      <%= f.select :topic, PointlessFeedback.message_topics, { :prompt => true } %>
     </div>
 
     <div class="field">

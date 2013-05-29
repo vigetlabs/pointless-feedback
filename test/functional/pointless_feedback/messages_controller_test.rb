@@ -16,7 +16,7 @@ module PointlessFeedback
           :message => {
             :name          => 'Some Guy',
             :email_address => 'some_guy@web.com',
-            :topic         => 'Pls Halp',
+            :topic         => 'Other',
             :description   => 'Yo website bork'
           },
           :use_route => :pointless_feedback

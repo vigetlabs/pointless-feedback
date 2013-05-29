@@ -10,4 +10,8 @@ module PointlessFeedback
   # in the initialization process and should be set to a string.
   mattr_accessor :parent_controller
   @@parent_controller = "ApplicationController"
+
+  # Custom topics to display on message form
+  mattr_accessor :message_topics
+  @@message_topics = ['Error on page', 'Other']
 end
