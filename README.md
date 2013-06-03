@@ -127,7 +127,6 @@ to customize your redirect hook.
 ## Roadmap
 
 - [ ] Add configurable list of topics for form
-- [ ] Add service to send email
 - [ ] Add service to send to Unfuddle
 - [ ] Add service to send to Github
 - [ ] Add honeypot to prevent spam bots
@@ -135,5 +134,6 @@ to customize your redirect hook.
 ## Contributors
 
 * @zporter
+* @efatsi
 
 This project rocks and uses MIT-LICENSE.
