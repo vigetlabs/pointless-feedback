@@ -4,6 +4,11 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rails/test_help"
 require "capybara/rails"
+require "factory_girl"
+require "test/unit"
+require "mocha/setup"
+
+require File.expand_path("../factories/messages.rb",  __FILE__)
 
 Rails.backtrace_cleaner.remove_silencers!
 

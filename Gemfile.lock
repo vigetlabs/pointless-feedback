@@ -44,6 +44,11 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     erubis (2.7.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -57,11 +62,14 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.23)
     minitest (4.7.3)
     minitest-spec-rails (4.7.2)
       minitest (~> 4.7)
       rails (>= 3.0)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.7.2)
     nokogiri (1.5.9)
     polyglot (0.3.3)
@@ -110,8 +118,10 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  factory_girl_rails
   jquery-rails
   launchy
   minitest-spec-rails
+  mocha
   pointless_feedback!
   sqlite3

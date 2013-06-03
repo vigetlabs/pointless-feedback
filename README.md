@@ -99,6 +99,15 @@ activerecord:
     message: "Correct the following errors and try again."
 ```
 
+To customize the subject of the feedback email, add the following to your
+`config/locales/en.yml` file as well:
+
+```yml
+pointless_feedback:
+  email:
+    subject: "Pointless Feedback"
+```
+
 #### Controllers
 
 You can overwrite `after_message_create_path` in your `ApplicationController`

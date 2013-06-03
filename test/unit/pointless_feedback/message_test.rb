@@ -33,5 +33,37 @@ module PointlessFeedback
         subject.errors[:topic].must_include "is not included in the list"
       end
     end
+
+    describe "exports" do
+      describe "when PointlessFeedback.send_emails is true" do
+        before  do
+          PointlessFeedback.email_feedback = true
+          PointlessFeedback.to_emails = ['test1@example.com', 'test2@example.com']
+        end
+        subject { FactoryGirl.build(:message) }
+
+        it "sends mail after create" do
+          mailer = stub(:deliver => true)
+          ['test1@example.com', 'test2@example.com'].each do |email|
+            FeedbackMailer.expects(:feedback).with(email, subject).returns(mailer)
+          end
+
+          subject.save
+        end
+      end
+
+      describe "when PointlessFeedback.send_emails is false" do
+        before  do
+          PointlessFeedback.email_feedback = false
+        end
+        subject { FactoryGirl.build(:message) }
+
+        it "does not send any mail" do
+          FeedbackMailer.expects(:feedback).times(0)
+
+          subject.save
+        end
+      end
+    end
   end
 end

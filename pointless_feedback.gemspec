@@ -21,5 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "capybara"
+  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency "mocha"
   s.add_development_dependency "launchy"
 end
