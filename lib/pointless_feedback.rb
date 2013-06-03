@@ -15,6 +15,14 @@ module PointlessFeedback
   mattr_accessor :message_topics
   @@message_topics = ['Error on page', 'Other']
 
+  # Variables needed for emailing feedback
+  mattr_accessor :email_feedback
+  @@send_emails = false
+  mattr_accessor :from_email
+  @@from_email = 'feedback@pointlesscorp.com'
+  mattr_accessor :to_emails
+  @@to_emails = ['first@example.com', 'second@example.com']
+
   # Default way to setup PointlessFeedback. Run rails generate
   # pointless_feedback_install to create a fresh initializer with all
   # configuration values.
