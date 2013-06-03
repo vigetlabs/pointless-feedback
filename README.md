@@ -108,9 +108,10 @@ to customize your redirect hook.
 
 1. Clone the repo: `git clone git://github.com/vigetlabs/pointless-feedback.git`
 2. Install dependencies: `bundle install`
-3. Run the test suite: `bundle exec rake test`
-4. Make your changes in a feature branch
-5. Make sure the test suite passes before submitting a Pull Request
+3. Setup databases: `bundle exec rake db:migrate && rake app:db:test:prepare`
+4. Run the test suite: `bundle exec rake test`
+5. Make your changes in a feature branch
+6. Make sure the test suite passes before submitting a Pull Request
 
 ## Roadmap
 
