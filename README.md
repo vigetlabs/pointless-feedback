@@ -28,10 +28,12 @@ gem 'pointless_feedback', :git => 'git@github.com:vigetlabs/pointless-feedback.g
 ```
 
 After you install Pointless Feedback and add it to your Gemfile, you need to
-run the generator:
+run the generator and install the engine migrations:
 
 ```
 bundle exec rails generate pointless_feedback:install
+bundle exec rake pointless_feedback:install:migrations
+bundle exec rake db:migrate
 ```
 
 The generator will install an initializer which describes ALL Pointless
@@ -39,7 +41,7 @@ Feedback's configuration options and you MUST take a look at it. When you are
 done, you are ready to mount the routes in your `config/routes.rb` file.
 
 ```ruby
-mount PointlessFeedback::Engine => '/feedback'
+mount PointlessFeedback::Engine, :at => '/feedback'
 ```
 
 Pointless Feedback uses flash messages to let users know if feedback was
