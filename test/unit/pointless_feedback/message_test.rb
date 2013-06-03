@@ -14,11 +14,7 @@ module PointlessFeedback
     end
 
     describe "validating topics" do
-      subject do
-        PointlessFeedback::Message.new(:name          => 'A Developer',
-                                       :email_address => 'developer@pointlesscorp.com',
-                                       :description   => 'Site is broke')
-      end
+      subject { FactoryGirl.build(:message) }
 
       it "allows valid topic" do
         subject.topic = 'Other'
@@ -34,12 +30,34 @@ module PointlessFeedback
       end
     end
 
+    describe "validating email" do
+      subject { FactoryGirl.build(:message) }
+
+      it "allows a valid email address" do
+        subject.email_address = 'test@example.com'
+
+        assert subject.valid?
+      end
+
+      it "does not allow invalid emails address" do
+        subject.email_address = 'test@example'
+        assert subject.invalid?
+
+        subject.email_address = 'test.com'
+        assert subject.invalid?
+
+        subject.email_address = 'come on'
+        assert subject.invalid?
+      end
+    end
+
     describe "exports" do
       describe "when PointlessFeedback.send_emails is true" do
         before  do
           PointlessFeedback.email_feedback = true
           PointlessFeedback.to_emails = ['test1@example.com', 'test2@example.com']
         end
+
         subject { FactoryGirl.build(:message) }
 
         it "sends mail after create" do

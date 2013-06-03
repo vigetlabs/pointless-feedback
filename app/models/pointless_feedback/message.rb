@@ -3,7 +3,8 @@ module PointlessFeedback
     attr_accessible :description, :email_address, :name, :topic
 
     validates :name, :email_address, :topic, :description, :presence => true
-    validates :topic, :inclusion => { :in => PointlessFeedback.message_topics }
+    validates :topic, :inclusion => PointlessFeedback.message_topics
+    validates :email_address, :format => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
     after_save :export_feedback
 
