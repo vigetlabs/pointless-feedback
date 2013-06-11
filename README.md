@@ -78,6 +78,8 @@ bundle exec rails generate pointless_feedback:views
 After doing so, you will find the views at `app/views/pointless_feedback/`
 within your application.
 
+**Note: Any url helpers used while on the feedback form page will need to prefaced with `main_app`.**
+
 #### I18n
 
 Most of the messaging in the Pointless Feedback engine uses I18n and can be
