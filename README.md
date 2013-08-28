@@ -131,7 +131,7 @@ to customize your redirect hook.
 - [ ] Add configurable list of topics for form
 - [ ] Add service to send to Unfuddle
 - [ ] Add service to send to Github
-- [ ] Add honeypot to prevent spam bots
+- [ ] Add admin view for messages with comments
 
 ## Contributors
 
