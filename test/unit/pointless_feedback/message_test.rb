@@ -51,7 +51,7 @@ module PointlessFeedback
       end
     end
 
-    describe "exports" do
+    describe "export_feedback" do
       describe "when PointlessFeedback.send_emails is true" do
         before  do
           PointlessFeedback.email_feedback = true
@@ -67,6 +67,15 @@ module PointlessFeedback
           end
 
           subject.save
+        end
+
+        describe "when the honeypot field is not nil" do
+          it "does not send mail after create" do
+            subject.contact_info = "I'm a spam bot!"
+            FeedbackMailer.expects(:feedback).never
+
+            subject.save
+          end
         end
       end
 
