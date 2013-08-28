@@ -20,7 +20,7 @@ module PointlessFeedback
     end
 
     def honeypot_filled_in?
-      contact_info != nil
+      contact_info.present?
     end
   end
 end
