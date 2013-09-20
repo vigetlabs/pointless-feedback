@@ -1,6 +1,9 @@
 module PointlessFeedback
   class Message < ActiveRecord::Base
-    attr_accessible :description, :email_address, :name, :topic, :contact_info
+    if PointlessFeedback.table_name.present?
+      self.table_name = PointlessFeedback.table_name
+    end
+
     attr_accessor :contact_info
 
     validates :name, :email_address, :topic, :description, :presence => true
