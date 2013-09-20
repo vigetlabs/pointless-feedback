@@ -1,3 +1,3 @@
 module PointlessFeedback
-  VERSION = "0.0.1"
+  VERSION = "4.0.0"
 end
