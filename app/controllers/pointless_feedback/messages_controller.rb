@@ -7,7 +7,7 @@ module PointlessFeedback
     end
 
     def create
-      @message = Message.new(params[:message])
+      @message = Message.new(message_params)
 
       if @message.save
         flash[:notice] = I18n.t('pointless_feedback.messages.saved',
@@ -17,6 +17,18 @@ module PointlessFeedback
       else
         render :new
       end
+    end
+
+    private
+
+    def message_params
+      params.require(:message).permit([
+        :description,
+        :email_address,
+        :name,
+        :topic,
+        :contact_info
+      ])
     end
   end
 end
