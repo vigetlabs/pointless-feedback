@@ -24,7 +24,7 @@ Pointless Feedback has been tested against Rails 3.2+. To install, simply add
 the following to your Gemfile:
 
 ```ruby
-gem 'pointless_feedback', :git => 'git@github.com:vigetlabs/pointless-feedback.git'
+gem 'pointless_feedback', :github => 'vigetlabs/pointless-feedback'
 ```
 
 After you install Pointless Feedback and add it to your Gemfile, you need to
