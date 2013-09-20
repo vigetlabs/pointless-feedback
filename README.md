@@ -154,7 +154,8 @@ to customize your redirect hook.
 
 ## Contributors
 
-* [@zporter](https://github.com/zporter)
-* [@efatsi](https://github.com/efatsi)
+* [@zporter](http://github.com/zporter)
+* [@efatsi](http://github.com/efatsi)
+* [@reagent](http://github.com/reagent)
 
 This project rocks and uses MIT-LICENSE.
