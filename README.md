@@ -24,7 +24,9 @@ Pointless Feedback has been tested against Rails 3.2+. To install, simply add
 the following to your Gemfile:
 
 ```ruby
-gem 'pointless_feedback', :github => 'vigetlabs/pointless-feedback'
+gem 'pointless_feedback',
+  :github => 'vigetlabs/pointless-feedback',
+  :branch => 'rails-4'
 ```
 
 After you install Pointless Feedback and add it to your Gemfile, you need to
@@ -135,7 +137,8 @@ to customize your redirect hook.
 
 ## Contributors
 
-* @zporter
-* @efatsi
+* [@zporter](http://github.com/zporter)
+* [@efatsi](http://github.com/efatsi)
+* [@reagent](http://github.com/reagent)
 
 This project rocks and uses MIT-LICENSE.

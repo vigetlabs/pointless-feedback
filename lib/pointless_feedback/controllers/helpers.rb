@@ -5,7 +5,7 @@ module PointlessFeedback
       extend ActiveSupport::Concern
 
       def after_message_create_path
-        main_app.respond_to?(:root_path) ? main_app.root_path : '/'
+        main_app.try(:root_path) || '/'
       end
     end
   end
