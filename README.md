@@ -1,7 +1,5 @@
 # Pointless Feedback
 
-**Currently, a work-in-progress -- not production-ready**
-
 A Rails engine that provides a platform for your app to submit user feedback to
 a specified service. Messages are stored in your database as a fail-safe when
 the specified service is unavailable. Currently, only email, Unfuddle, and
@@ -128,14 +126,13 @@ to customize your redirect hook.
 
 ## Roadmap
 
-- [ ] Add configurable list of topics for form
 - [ ] Add service to send to Unfuddle
 - [ ] Add service to send to Github
 - [ ] Add admin view for messages with comments
 
 ## Contributors
 
-* @zporter
-* @efatsi
+* [@zporter](https://github.com/zporter)
+* [@efatsi](https://github.com/efatsi)
 
 This project rocks and uses MIT-LICENSE.
