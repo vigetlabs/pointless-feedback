@@ -18,4 +18,5 @@ gem "jquery-rails"
 
 group :test do
   gem 'minitest-spec-rails'
+  gem 'mocha', require: false
 end
