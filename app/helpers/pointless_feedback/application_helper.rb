@@ -1,5 +1,7 @@
 module PointlessFeedback
   module ApplicationHelper
+    delegate :root_url, :root_path, :to => :main_app
+
     # Can search for named routes directly in the main app, omitting
     # the "main_app." prefix
     def method_missing(method, *args, &block)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pointless_feedback (0.0.1)
+    pointless_feedback (1.0.0)
       rails (~> 3.2.13)
 
 GEM
@@ -43,6 +43,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.0.9)
     erubis (2.7.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
@@ -63,6 +64,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     metaclass (0.0.1)
+    method_source (0.8.2)
     mime-types (1.23)
     minitest (4.7.3)
     minitest-spec-rails (4.7.2)
@@ -73,6 +75,10 @@ GEM
     multi_json (1.7.2)
     nokogiri (1.5.9)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -98,6 +104,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    slop (3.4.6)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -124,4 +131,5 @@ DEPENDENCIES
   minitest-spec-rails
   mocha
   pointless_feedback!
+  pry
   sqlite3
