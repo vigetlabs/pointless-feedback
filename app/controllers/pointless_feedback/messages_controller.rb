@@ -1,5 +1,7 @@
 module PointlessFeedback
   class MessagesController < PointlessFeedback.parent_controller.constantize
+    helper PointlessFeedback::ApplicationHelper
+
     def new
       @message = Message.new
     end
