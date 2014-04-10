@@ -62,9 +62,7 @@ module PointlessFeedback
 
         it "sends mail after create" do
           mailer = stub(:deliver => true)
-          ['test1@example.com', 'test2@example.com'].each do |email|
-            FeedbackMailer.expects(:feedback).with(email, subject).returns(mailer)
-          end
+          FeedbackMailer.expects(:feedback).with(subject).returns(mailer)
 
           subject.save
         end

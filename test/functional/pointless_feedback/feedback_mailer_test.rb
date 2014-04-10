@@ -3,8 +3,10 @@ require 'test_helper'
 module PointlessFeedback
   class FeedbackMailerTest < ActionMailer::TestCase
     before do
+      PointlessFeedback.to_emails = 'to@example.com'
+
       @message = FactoryGirl.create(:message)
-      @mail    = FeedbackMailer.feedback('to@example.com', @message)
+      @mail    = FeedbackMailer.feedback(@message)
     end
 
     test "feedback email" do

@@ -13,9 +13,7 @@ module PointlessFeedback
 
     def export_feedback
       if PointlessFeedback.email_feedback
-        PointlessFeedback.to_emails.each do |email|
-          FeedbackMailer.feedback(email, self).deliver
-        end
+        FeedbackMailer.feedback(self).deliver
       end
     end
 
