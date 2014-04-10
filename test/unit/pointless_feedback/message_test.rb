@@ -75,6 +75,15 @@ module PointlessFeedback
             subject.save
           end
         end
+
+        describe "when the description is filled with links" do
+          it "does not send mail after create" do
+            subject.description = 'CXYz73 <a href="http://kniuzeqqywrg.com/">kniuzeqqywrg</a>, [url=http://kdvfwnevgkcq.com/]kdvfwnevgkcq[/url], [link=http://fibhlwzwvxjr.com/]fibhlwzwvxjr[/link], http://pebecsefhsmz.com/'
+            FeedbackMailer.expects(:feedback).never
+
+            subject.save
+          end
+        end
       end
 
       describe "when PointlessFeedback.send_emails is false" do

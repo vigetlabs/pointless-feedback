@@ -7,7 +7,7 @@ module PointlessFeedback
     validates :topic, :inclusion => PointlessFeedback.message_topics
     validates :email_address, :format => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
-    after_save :export_feedback, :unless => :honeypot_filled_in?
+    after_save :export_feedback, :unless => :spam?
 
     private
 
@@ -17,8 +17,16 @@ module PointlessFeedback
       end
     end
 
+    def spam?
+      honeypot_filled_in? || filled_with_links?
+    end
+
     def honeypot_filled_in?
       contact_info.present?
+    end
+
+    def filled_with_links?
+      description.scan("http").count >= 3
     end
   end
 end
