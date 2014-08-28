@@ -51,6 +51,22 @@ module PointlessFeedback
       end
     end
 
+    describe "validating against spam" do
+      subject { FactoryGirl.build(:message) }
+
+      it "allows descriptions with no links" do
+        subject.description = "I have no links!"
+
+        assert subject.valid?
+      end
+
+      it "does not allow descriptions with 3 or more links" do
+        subject.description = 'CXYz73 <a href="http://kniuzeqqywrg.com/">kniuzeqqywrg</a>, [url=http://kdvfwnevgkcq.com/]kdvfwnevgkcq[/url], [link=http://fibhlwzwvxjr.com/]fibhlwzwvxjr[/link], http://pebecsefhsmz.com/'
+
+        assert subject.invalid?
+      end
+    end
+
     describe "export_feedback" do
       describe "when PointlessFeedback.send_emails is true" do
         before  do
@@ -70,15 +86,6 @@ module PointlessFeedback
         describe "when the honeypot field is not nil" do
           it "does not send mail after create" do
             subject.contact_info = "I'm a spam bot!"
-            FeedbackMailer.expects(:feedback).never
-
-            subject.save
-          end
-        end
-
-        describe "when the description is filled with links" do
-          it "does not send mail after create" do
-            subject.description = 'CXYz73 <a href="http://kniuzeqqywrg.com/">kniuzeqqywrg</a>, [url=http://kdvfwnevgkcq.com/]kdvfwnevgkcq[/url], [link=http://fibhlwzwvxjr.com/]fibhlwzwvxjr[/link], http://pebecsefhsmz.com/'
             FeedbackMailer.expects(:feedback).never
 
             subject.save
