@@ -14,7 +14,7 @@ module PointlessFeedback
     end
 
     def feedback_subject
-      I18n.t('pointless_feedback.email.subject', :default => 'Pointless Feedback')
+      I18n.t('pointless_feedback.email.subject', :default => 'Feedback')
     end
   end
 end
