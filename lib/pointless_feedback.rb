@@ -18,8 +18,13 @@ module PointlessFeedback
   # Variables needed for emailing feedback
   mattr_accessor :email_feedback
   @@send_emails = false
+
   mattr_accessor :from_email
   @@from_email = 'feedback@pointlesscorp.com'
+
+  mattr_accessor :send_from_submitter
+  @@send_from_submitter = false
+
   mattr_accessor :to_emails
   @@to_emails = ['first@example.com', 'second@example.com']
 
