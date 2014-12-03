@@ -68,7 +68,7 @@ module PointlessFeedback
     end
 
     describe "export_feedback" do
-      describe "when PointlessFeedback.send_emails is true" do
+      describe "when PointlessFeedback.email_feedback is true" do
         before  do
           PointlessFeedback.email_feedback = true
           PointlessFeedback.to_emails = ['test1@example.com', 'test2@example.com']
@@ -93,7 +93,7 @@ module PointlessFeedback
         end
       end
 
-      describe "when PointlessFeedback.send_emails is false" do
+      describe "when PointlessFeedback.email_feedback is false" do
         before  do
           PointlessFeedback.email_feedback = false
         end

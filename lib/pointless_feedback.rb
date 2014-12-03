@@ -17,7 +17,7 @@ module PointlessFeedback
 
   # Variables needed for emailing feedback
   mattr_accessor :email_feedback
-  @@send_emails = false
+  @@email_feedback = false
 
   mattr_accessor :from_email
   @@from_email = 'feedback@pointlesscorp.com'
