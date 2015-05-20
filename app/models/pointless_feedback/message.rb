@@ -17,7 +17,7 @@ module PointlessFeedback
 
     def export_feedback
       if PointlessFeedback.email_feedback
-        FeedbackMailer.feedback(self).deliver
+        FeedbackMailer.feedback(self).deliver_now
       end
     end
 
