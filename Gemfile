@@ -17,6 +17,7 @@ gem "jquery-rails"
 # gem 'debugger'
 
 group :test do
+  gem 'test-unit'
   gem 'pry'
   gem 'minitest-spec-rails'
   gem 'mocha', require: false
