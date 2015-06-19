@@ -1,6 +1,6 @@
 # Pointless Feedback
 
-[![Code Climate](https://codeclimate.com/github/vigetlabs/pointless-feedback.png)](https://codeclimate.com/github/vigetlabs/pointless-feedback)
+[![Code Climate](https://codeclimate.com/github/vigetlabs/pointless-feedback.png)](https://codeclimate.com/github/vigetlabs/pointless-feedback) [![Build Status](https://travis-ci.org/vigetlabs/pointless-feedback.svg?branch=master)](https://travis-ci.org/vigetlabs/pointless-feedback)
 
 A Rails engine that provides a platform for your app to submit user feedback to
 a specified service. Messages are stored in your database as a fail-safe when

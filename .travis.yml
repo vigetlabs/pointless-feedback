@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 1.9.3
+
+before_script:
+  - bundle exec rake db:migrate
+  - bundle exec rake app:db:test:prepare
+
+script: bundle exec rake
