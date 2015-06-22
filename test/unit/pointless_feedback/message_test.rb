@@ -77,7 +77,7 @@ module PointlessFeedback
         subject { FactoryGirl.build(:message) }
 
         it "sends mail after create" do
-          mailer = stub(:deliver => true)
+          mailer = stub(:deliver_now => true)
           FeedbackMailer.expects(:feedback).with(subject).returns(mailer)
 
           subject.save

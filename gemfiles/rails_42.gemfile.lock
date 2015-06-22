@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ../
   specs:
     pointless_feedback (4.0.0)
       rails (~> 4.0)
@@ -152,5 +152,6 @@ DEPENDENCIES
   mocha
   pointless_feedback!
   pry
+  rails (~> 4.2.0)
   sqlite3
   test-unit

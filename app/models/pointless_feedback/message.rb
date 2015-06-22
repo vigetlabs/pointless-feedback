@@ -1,6 +1,9 @@
 module PointlessFeedback
   class Message < ActiveRecord::Base
-    attr_accessible :description, :email_address, :name, :topic, :contact_info
+    if PointlessFeedback.table_name.present?
+      self.table_name = PointlessFeedback.table_name
+    end
+
     attr_accessor :contact_info
 
     validates :name, :email_address, :topic, :description, :presence => true
@@ -13,9 +16,11 @@ module PointlessFeedback
     private
 
     def export_feedback
-      if PointlessFeedback.email_feedback
-        FeedbackMailer.feedback(self).deliver
-      end
+      return unless PointlessFeedback.email_feedback
+
+      # Support Rails < 4.2 and >= 4.2 delivery options
+      mailer = FeedbackMailer.feedback(self)
+      mailer.respond_to?(:deliver_now) ? mailer.deliver_now : mailer.deliver
     end
 
     def honeypot_filled_in?
