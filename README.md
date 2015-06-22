@@ -12,22 +12,26 @@ under [Pointless Corp](http://www.pointlesscorp.com/).*
 
 ## Contents
 
-1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [Customization](#customization)
-4. [Development](#development)
-5. [Roadmap](#roadmap)
-6. [Contributors](#contributors)
+1. [Versions](#versions)
+2. [Installation](#installation)
+3. [Configuration](#configuration)
+4. [Customization](#customization)
+5. [Development](#development)
+6. [Roadmap](#roadmap)
+7. [Contributors](#contributors)
+
+## Versions
+
+As of version 4.x, the Pointless Feedback gem versions will follow Rails releases.  E.g. Pointless 4.x will support Rails 4.x.  Additionally, Pointless 4.x will only support Ruby 2.x.
+
+For Rails 3.x support, use Pointless Feedback version 1.x.
 
 ## Installation
 
-Pointless Feedback has been tested against Rails 3.2+. To install, simply add
-the following to your Gemfile:
+To install, simply add the following to your Gemfile:
 
 ```ruby
-gem 'pointless_feedback',
-  :github => 'vigetlabs/pointless-feedback',
-  :branch => 'rails-4'
+gem 'pointless_feedback'
 ```
 
 After you install Pointless Feedback and add it to your Gemfile, you need to
@@ -80,6 +84,9 @@ Specifies to what addresses feedback email is sent to.
 
 **from_email:**
 Specifies what address the feedback email is sent from.
+
+**table_name:**
+Defaults to engine's namespace, e.g. `pointless_feedback_messages`.  Change to any desired table for `PointlessFeedback::Message` model.
 
 ## Customization
 

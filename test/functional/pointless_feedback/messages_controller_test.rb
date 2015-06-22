@@ -2,8 +2,12 @@ require 'test_helper'
 
 module PointlessFeedback
   class MessagesControllerTest < ActionController::TestCase
+    setup do
+      @routes = Engine.routes
+    end
+
     describe "getting new" do
-      setup { get :new, :use_route => :pointless_feedback }
+      setup { get :new }
 
       it { assert_response :success }
       it { assert_template :new }
@@ -18,8 +22,7 @@ module PointlessFeedback
             :email_address => 'some_guy@web.com',
             :topic         => 'Other',
             :description   => 'Yo website bork'
-          },
-          :use_route => :pointless_feedback
+          }
         }
       end
 

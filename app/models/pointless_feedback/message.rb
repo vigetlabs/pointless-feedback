@@ -16,9 +16,11 @@ module PointlessFeedback
     private
 
     def export_feedback
-      if PointlessFeedback.email_feedback
-        FeedbackMailer.feedback(self).deliver_now
-      end
+      return unless PointlessFeedback.email_feedback
+
+      # Support Rails < 4.2 and >= 4.2 delivery options
+      mailer = FeedbackMailer.feedback(self)
+      mailer.respond_to?(:deliver_now) ? mailer.deliver_now : mailer.deliver
     end
 
     def honeypot_filled_in?
