@@ -1,4 +1,5 @@
 require "pointless_feedback/engine"
+require "pointless_feedback/captcha"
 
 module PointlessFeedback
   module Controllers
@@ -33,10 +34,20 @@ module PointlessFeedback
   mattr_accessor :to_emails
   @@to_emails = ['first@example.com', 'second@example.com']
 
+  mattr_accessor :google_captcha_site_key
+  @@google_captcha_site_key = nil
+
+  mattr_accessor :google_captcha_secret_key
+  @@google_captcha_secret_key = nil
+
   # Default way to setup PointlessFeedback. Run rails generate
   # pointless_feedback_install to create a fresh initializer with all
   # configuration values.
   def self.setup
     yield self
+  end
+
+  def self.using_captcha?
+    @@google_captcha_site_key.present? && @@google_captcha_secret_key.present?
   end
 end

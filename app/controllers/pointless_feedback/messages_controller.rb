@@ -9,7 +9,7 @@ module PointlessFeedback
     def create
       @message = Message.new(message_params)
 
-      if @message.save
+      if pass_captcha? && @message.save
         flash[:notice] = I18n.t('pointless_feedback.messages.saved',
                                 :default => 'Thanks for your feedback!')
 
@@ -29,6 +29,14 @@ module PointlessFeedback
         :topic,
         :contact_info
       ])
+    end
+
+    def pass_captcha?
+      if PointlessFeedback.using_captcha?
+        PointlessFeedback::Captcha.pass?(params["g-recaptcha-response"])
+      else
+        true
+      end
     end
   end
 end
