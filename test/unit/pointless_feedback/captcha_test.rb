@@ -6,7 +6,7 @@ module PointlessFeedback
     describe ".pass?" do
       setup    do
         PointlessFeedback.google_captcha_secret_key = "super-secret"
-        @uri  = URI("https://www.google.com/recaptcha/api/siteverify")
+        @url  = "https://www.google.com/recaptcha/api/siteverify"
         @body = {
           secret:   "super-secret",
           response: "fake-response"
@@ -15,7 +15,7 @@ module PointlessFeedback
 
       teardown do
         PointlessFeedback.google_captcha_secret_key = nil
-        @uri  = nil
+        @url  = nil
         @body = nil
       end
 
@@ -25,7 +25,7 @@ module PointlessFeedback
         success  = { "success" => true }
         response = stub(body: success.to_json)
 
-        Net::HTTP.expects(:post_form).with(@uri, @body).returns(response)
+        Typhoeus.expects(:post).with(@url, body: @body).returns(response)
 
         assert subject.pass?("fake-response")
       end
@@ -34,7 +34,7 @@ module PointlessFeedback
         failure  = { "success" => false }
         response = stub(body: failure.to_json)
 
-        Net::HTTP.expects(:post_form).with(@uri, @body).returns(response)
+        Typhoeus.expects(:post).with(@url, body: @body).returns(response)
 
         refute subject.pass?("fake-response")
       end
