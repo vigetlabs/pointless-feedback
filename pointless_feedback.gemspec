@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2"
   s.add_dependency "typhoeus", "~> 0.7"
 
-  s.add_development_dependency "sqlite3",            "~> 0"
-  s.add_development_dependency "capybara",           "~> 0"
-  s.add_development_dependency "factory_girl_rails", "~> 0"
-  s.add_development_dependency "launchy",            "~> 0"
+  s.add_development_dependency "sqlite3",            "~> 1.3"
+  s.add_development_dependency "capybara",           "~> 2.4"
+  s.add_development_dependency "factory_girl_rails", "~> 4.5"
+  s.add_development_dependency "launchy",            "~> 2.4"
 end
