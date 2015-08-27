@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    pointless_feedback (1.0.3)
+    pointless_feedback (3.0.0)
       rails (~> 3.2.13)
+      typhoeus (~> 0.7.3)
 
 GEM
   remote: http://rubygems.org/
@@ -45,11 +46,14 @@ GEM
       xpath (~> 2.0)
     coderay (1.0.9)
     erubis (2.7.0)
+    ethon (0.7.4)
+      ffi (>= 1.3.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    ffi (1.9.10)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -116,6 +120,8 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    typhoeus (0.7.3)
+      ethon (>= 0.7.4)
     tzinfo (0.3.37)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -133,3 +139,6 @@ DEPENDENCIES
   pointless_feedback!
   pry
   sqlite3
+
+BUNDLED WITH
+   1.10.4

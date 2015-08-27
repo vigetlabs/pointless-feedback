@@ -1,5 +1,6 @@
 require "pointless_feedback/engine"
 require "pointless_feedback/captcha"
+require "typhoeus"
 
 module PointlessFeedback
   module Controllers
