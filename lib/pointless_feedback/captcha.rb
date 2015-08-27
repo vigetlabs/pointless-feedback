@@ -19,11 +19,11 @@ module PointlessFeedback
     private
 
     def response
-      @response ||= Net::HTTP.post_form(uri, body)
+      @response ||= Typhoeus.post(url, body: body)
     end
 
-    def uri
-      URI("https://www.google.com/recaptcha/api/siteverify")
+    def url
+      "https://www.google.com/recaptcha/api/siteverify"
     end
 
     def body
