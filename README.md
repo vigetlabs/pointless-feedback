@@ -22,9 +22,11 @@ under [Pointless Corp](http://www.pointlesscorp.com/).*
 
 ## Versions
 
-As of version 4.x, the Pointless Feedback gem versions will follow Rails releases.  E.g. Pointless 4.x will support Rails 4.x.  Additionally, Pointless 4.x will only support Ruby 2.x.
-
 For Rails 3.x support, use Pointless Feedback version 1.x.
+
+For Rails 4.x and greater, use Pointless Feedback version 4.x.
+
+Additionally, Pointless 4.x will only support Ruby 2.x.
 
 ## Installation
 
