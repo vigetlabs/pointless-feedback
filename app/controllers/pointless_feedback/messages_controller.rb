@@ -15,6 +15,8 @@ module PointlessFeedback
 
         redirect_to after_message_create_path
       else
+        flash[:alert] = I18n.t('pointless_feedback.messages.invalid_captcha',
+                               :default => 'Are you a robot? Please check the box at the bottom of the page and try again.')
         render :new
       end
     end
