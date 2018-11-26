@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails",    ">= 4.0"
   s.add_dependency "typhoeus", "~> 0.7", ">= 0.7.3"
   s.add_dependency "jquery-rails", ">= 4.0"
+  s.add_dependency "airrecord", "~> 1.0"
 
   s.add_development_dependency "sqlite3",            "~> 1.3"
   s.add_development_dependency "capybara",           "~> 2.4"
