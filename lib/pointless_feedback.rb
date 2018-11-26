@@ -1,6 +1,7 @@
 require "pointless_feedback/engine"
 require "pointless_feedback/captcha"
 require "typhoeus"
+require "jquery-rails"
 
 module PointlessFeedback
   module Controllers
