@@ -16,11 +16,32 @@ module PointlessFeedback
     private
 
     def export_feedback
-      return unless PointlessFeedback.email_feedback
+      if PointlessFeedback.email_feedback
+        # Support Rails < 4.2 and >= 4.2 delivery options
+        mailer = FeedbackMailer.feedback(self)
+        mailer.respond_to?(:deliver_now) ? mailer.deliver_now : mailer.deliver
+      end
 
-      # Support Rails < 4.2 and >= 4.2 delivery options
-      mailer = FeedbackMailer.feedback(self)
-      mailer.respond_to?(:deliver_now) ? mailer.deliver_now : mailer.deliver
+      if PointlessFeedback.airtable_api_key
+        feedback_table = Airrecord.table(
+          PointlessFeedback.airtable_api_key,
+          PointlessFeedback.airtable_app_key,
+          PointlessFeedback.airtable_table_name
+        )
+
+        begin
+          feedback_table.create(
+            "Name"        => name,
+            "Email"       => email_address,
+            "Topic"       => topic,
+            "Description" => description
+          )
+        rescue => e
+          # ignore errors in production, last thing you want is a 500
+          # when someone's trying to complain about your site.
+          raise(e) if Rails.env.development?
+        end
+      end
     end
 
     def honeypot_filled_in?

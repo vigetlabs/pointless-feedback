@@ -2,6 +2,7 @@ require "pointless_feedback/engine"
 require "pointless_feedback/captcha"
 require "typhoeus"
 require "jquery-rails"
+require "airrecord"
 
 module PointlessFeedback
   module Controllers
@@ -41,6 +42,15 @@ module PointlessFeedback
 
   mattr_accessor :google_captcha_secret_key
   @@google_captcha_secret_key = nil
+
+  mattr_accessor :airtable_api_key
+  @@airtable_api_key = nil
+
+  mattr_accessor :airtable_app_key
+  @@airtable_app_key = nil
+
+  mattr_accessor :airtable_table_name
+  @@airtable_table_name = nil
 
   # Default way to setup PointlessFeedback. Run rails generate
   # pointless_feedback_install to create a fresh initializer with all
