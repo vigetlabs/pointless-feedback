@@ -90,6 +90,11 @@ Specifies what address the feedback email is sent from.
 **table_name:**
 Defaults to engine's namespace, e.g. `pointless_feedback_messages`.  Change to any desired table for `PointlessFeedback::Message` model.
 
+**google_captcha_site_key & google_captcha_secret_key:**
+If you'd like to block out the robots, set up a Google Captcha instance:
+
+Do so here - http://www.google.com/recaptcha/admin. Be sure to configure it with the reCAPTCHA v2 `"I'm not a robot" Checkbox`. Then copy the site_key and secret_key into these config variables and PointlessFeedback will handle the rest!
+
 ## Customization
 
 Pointless Feedback provides you with a simple setup that should cover most
