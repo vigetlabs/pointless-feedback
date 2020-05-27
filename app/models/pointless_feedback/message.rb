@@ -34,7 +34,8 @@ module PointlessFeedback
             "Name"        => name,
             "Email"       => email_address,
             "Topic"       => topic,
-            "Description" => description
+            "Description" => description,
+            "Date"        => created_at
           )
         rescue => e
           # ignore errors in production, last thing you want is a 500
