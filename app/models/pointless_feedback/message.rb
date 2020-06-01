@@ -35,7 +35,7 @@ module PointlessFeedback
             "Email"       => email_address,
             "Topic"       => topic,
             "Description" => description,
-            "Date"        => created_at
+            "Date"        => created_at.strftime("%m/%d/%y")
           )
         rescue => e
           # ignore errors in production, last thing you want is a 500
