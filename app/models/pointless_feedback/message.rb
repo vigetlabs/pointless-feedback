@@ -11,7 +11,7 @@ module PointlessFeedback
     validates :email_address, :format => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validate :is_not_spam
 
-    after_save :export_feedback, :unless => :honeypot_filled_in?
+    after_save :export_feedback, :unless => :ignore_feedback?
 
     private
 
@@ -45,8 +45,22 @@ module PointlessFeedback
       end
     end
 
+    def ignore_feedback?
+      honeypot_filled_in? || contains_invalid_words?
+    end
+
     def honeypot_filled_in?
       contact_info.present?
+    end
+
+    def contains_invalid_words?
+      PointlessFeedback.invalid_words.each do |word|
+        if description.downcase.include? word.downcase
+          return true
+        end
+      end
+
+      false
     end
 
     def is_not_spam

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130501182659) do
 
-  create_table "pointless_feedback_messages", force: true do |t|
+  create_table "pointless_feedback_messages", force: :cascade do |t|
     t.string   "name"
     t.string   "email_address"
     t.string   "topic"
