@@ -52,6 +52,9 @@ module PointlessFeedback
   mattr_accessor :airtable_table_name
   @@airtable_table_name = nil
 
+  mattr_accessor :invalid_words
+  @@invalid_words = []
+
   # Default way to setup PointlessFeedback. Run rails generate
   # pointless_feedback_install to create a fresh initializer with all
   # configuration values.

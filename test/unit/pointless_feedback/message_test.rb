@@ -91,6 +91,17 @@ module PointlessFeedback
             subject.save
           end
         end
+
+        describe "when the description contains an invalid word" do
+          it "does not send mail after create" do
+            PointlessFeedback.invalid_words = ['nymphomania']
+
+            subject.description = "I have nymphomania."
+            FeedbackMailer.expects(:feedback).never
+
+            subject.save
+          end
+        end
       end
 
       describe "when PointlessFeedback.email_feedback is false" do

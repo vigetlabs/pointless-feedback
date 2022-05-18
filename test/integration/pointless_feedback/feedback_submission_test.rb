@@ -44,6 +44,29 @@ class FeedbackSubmissionTest < ActionDispatch::IntegrationTest
     end
   end
 
+  describe "submitting feedback with the invalid word in description" do
+    before do
+      PointlessFeedback.invalid_words = ['nymphomania']
+      
+      visit "/pointless_feedback"
+
+      fill_in_fields
+      fill_in "Description", :with => "I got nymphomania."
+
+      click_on "Submit"
+    end
+
+    test "redirects to the root path" do
+      assert_equal current_path, "/"
+    end
+
+    test "thanks message is displayed" do
+      within('body') do
+        assert_match 'Thanks for your feedback!', text
+      end
+    end
+  end
+
   def fill_in_fields
     fill_in "Name",          :with => "Eli"
     fill_in "Email address", :with => "eli@example.com"

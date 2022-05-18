@@ -92,6 +92,9 @@ Specifies what address the feedback email is sent from.
 **table_name:**
 Defaults to engine's namespace, e.g. `pointless_feedback_messages`.  Change to any desired table for `PointlessFeedback::Message` model.
 
+**invalid_words:**
+List of words in the feedback description that would prevent an email from sending.
+
 **google_captcha_site_key & google_captcha_secret_key:**
 If you'd like to block out the robots, set up a Google Captcha instance:
 
