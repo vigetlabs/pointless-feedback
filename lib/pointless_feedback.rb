@@ -55,6 +55,12 @@ module PointlessFeedback
   mattr_accessor :invalid_words
   @@invalid_words = []
 
+  mattr_accessor :show_url_field
+  @@show_url_field = false
+
+  mattr_accessor :url_label
+  @@url_label = "URL"
+
   # Default way to setup PointlessFeedback. Run rails generate
   # pointless_feedback_install to create a fresh initializer with all
   # configuration values.

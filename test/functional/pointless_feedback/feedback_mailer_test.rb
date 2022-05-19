@@ -23,6 +23,18 @@ module PointlessFeedback
       assert_match "Description: #{@message.description}", @mail.body.encoded
     end
 
+    test "feedback email body with URL field" do
+      PointlessFeedback.show_url_field = true
+      PointlessFeedback.url_label = "Story URL"
+
+      assert_match "You've got feedback!", @mail.body.encoded
+      assert_match "Name: #{@message.name}", @mail.body.encoded
+      assert_match "Email Address: #{@message.email_address}", @mail.body.encoded
+      assert_match "Topic: #{@message.topic}", @mail.body.encoded
+      assert_match "Description: #{@message.description}", @mail.body.encoded
+      assert_match "Story URL: #{@message.url}", @mail.body.encoded
+    end
+
     test "feedback from email when set" do
       PointlessFeedback.from_email = 'from@example.com'
       @mail = FeedbackMailer.feedback(@message)

@@ -3,4 +3,7 @@ You've got feedback!
 <p>Name: <%= @message.name %></p>
 <p>Email Address: <%= @message.email_address %></p>
 <p>Topic: <%= @message.topic %></p>
+<% if PointlessFeedback.show_url_field %>
+  <p><%= PointlessFeedback.url_label %>: <%= @message.url %></p>
+<% end %>
 <p>Description: <%= @message.description %></p>
