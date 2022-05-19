@@ -29,7 +29,8 @@ module PointlessFeedback
         :email_address,
         :name,
         :topic,
-        :contact_info
+        :contact_info,
+        :url
       ])
     end
 

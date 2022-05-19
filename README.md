@@ -95,6 +95,12 @@ Defaults to engine's namespace, e.g. `pointless_feedback_messages`.  Change to a
 **invalid_words:**
 List of words in the feedback description that would prevent an email from sending.
 
+**show_url_field:**
+Defaults to `false`. If set to `true`, will show an additional URL field in the form.
+
+**url_label:**
+Defaults to `URL`. The label for the URL field that will be shown if `show_url_field` is `true`.
+
 **google_captcha_site_key & google_captcha_secret_key:**
 If you'd like to block out the robots, set up a Google Captcha instance:
 

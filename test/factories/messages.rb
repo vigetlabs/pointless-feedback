@@ -4,5 +4,6 @@ FactoryGirl.define do
     email_address 'developer@pointlesscorp.com'
     description   'Site is broke'
     topic         'Other'
+    url           'https://www.viget.com/'
   end
 end
