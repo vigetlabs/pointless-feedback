@@ -13,6 +13,7 @@ module PointlessFeedback
     end
 
     def pass?
+      puts "DEBUG CAPTCHA RESPONSE: #{response.body}"
       JSON.parse(response.body)["success"] == true
     end
 
